@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monograph Magazine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf9;
+            color: #292524;
+            line-height: 1.6;
+        }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        
+        header {
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e7e5e4;
+        }
+        .masthead {
+            font-size: 2rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .issue-info {
+            font-size: 0.875rem;
+            color: #78716c;
+            text-align: right;
+        }
+        
+        .hero-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            border-bottom: 1px solid #e7e5e4;
+        }
+        .hero-content {
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .category {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            color: #78716c;
+            margin-bottom: 1rem;
+        }
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        .hero-meta {
+            color: #78716c;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+        .hero-image {
+            background: linear-gradient(135deg, #d6d3d1 0%, #a8a29e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5" x="0" y="0" width="100" height="100"/></svg>');
+            background-size: 20px 20px;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-bottom: 1px solid #e7e5e4;
+        }
+        .article-item {
+            padding: 3rem;
+            border-right: 1px solid #e7e5e4;
+        }
+        .article-item:last-child { border-right: none; }
+        .article-number {
+            font-size: 3rem;
+            color: #e7e5e4;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        .article-excerpt {
+            color: #78716c;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            color: #78716c;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-article { grid-template-columns: 1fr; }
+            .hero-image { height: 40vh; }
+            .article-grid { grid-template-columns: 1fr; }
+            .article-item { border-right: none; border-bottom: 1px solid #e7e5e4; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="masthead">Monograph</div>
+        <div class="issue-info">
+            <div>Vol. 12</div>
+            <div>Spring 2024</div>
+        </div>
+    </header>
+
+    <article class="hero-article">
+        <div class="hero-content">
+            <div class="category">Cover Story</div>
+            <h1 class="hero-title serif">The Architecture of Silence: Minimalism in Modern Design</h1>
+            <div class="hero-meta">By Sarah Chen · Photography by Marcus Webb</div>
+            <p class="serif" style="font-size: 1.25rem; color: #57534e; line-height: 1.7;">
+                An exploration of how negative space and intentional restraint are reshaping 
+                our visual landscape, from digital interfaces to physical environments.
+            </p>
+        </div>
+        <div class="hero-image"></div>
+    </article>
+
+    <section class="article-grid">
+        <article class="article-item">
+            <div class="article-number serif">01</div>
+            <h2 class="article-title serif">The Slow Web Movement</h2>
+            <p class="article-excerpt">
+                Why designers are abandoning infinite scroll and autoplay in favor of 
+                intentional, paced experiences.
+            </p>
+        </article>
+        <article class="article-item">
+            <div class="article-number serif">02</div>
+            <h2 class="article-title serif">Material Honesty</h2>
+            <p class="article-excerpt">
+                A return to authentic textures and unprocessed surfaces in product design 
+                and architecture.
+            </p>
+        </article>
+        <article class="article-item">
+            <div class="article-number serif">03</div>
+            <h2 class="article-title serif">Digital Declutter</h2>
+            <p class="article-excerpt">
+                Strategies for creating calmer, more focused digital workspaces without 
+                sacrificing productivity.
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        <p>© 2024 Monograph Magazine. All rights reserved.</p>
+    </footer>
+</body>
+</html>
